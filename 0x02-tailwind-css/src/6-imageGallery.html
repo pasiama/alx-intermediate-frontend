@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid and Flexbox Layout with Image Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="p-4">
+    <header class="bg-blue-500 text-white p-4">
+        <h1 class="text-3xl">Grid and Flexbox Layout</h1>
+    </header>
+
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4 min-h-screen">
+        <section class="lg:col-span-2 flex space-x-4">
+            <div class="bg-gray-100 p-4 flex-1">Flexbox Item 1</div>
+            <div class="bg-gray-100 p-4 flex-1">Flexbox Item 2</div>
+        </section>
+        <aside class="bg-green-200 p-4">Sidebar</aside>
+    </main>
+
+    <!-- Image Gallery Section -->
+    <section class="mt-8">
+        <h2 class="text-2xl font-semibold mb-4">Image Gallery</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 1">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 2">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 3">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 4">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 5">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 6">
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white p-4 mt-4">
+        <p>&copy; 2024 John Doe's Blog</p>
+    </footer>
+</body>
+</html>
